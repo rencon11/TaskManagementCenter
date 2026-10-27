@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  outline: none;
+  user-select: none;
+}
+
+:root {
+  --main-color: #e6ca76;
+  --header-font-size: 32px;
+  --button-bg-color: #194fff;
+  --button-text-color: #ffffff;
+  --button-font-size: 24px;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  padding: 6px;
+  font-size: var(--header-font-size);
+  background-color: var(--main-color);
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+  display: block;
+  height: 36px;
+}
+
+#main-container {
+  width: fit-content;
+  margin-top: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#controls {
+  width: 100vw;
+  display: flex;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
+}
+#filter {
+  padding: 6px 16px;
+  font-size: var(--button-font-size);
+  border-radius: 5px;
+  width: fit-content;
+  appearance: base-select;
+  transition: width 0.5s;
+  word-break: keep-all;
+}
+
+option:checked {
+  font-weight: bold;
+}
+::picker(select){
+  appearance: base-select;
+  border-radius: 8px;
+}
+option::checkmark {
+  order: 0;
+  content: "> ";
+}
+
+
+option:hover,
+option:focus {
+  background: plum;
+}
+
+#search {
+  padding: 8px 16px;
+  color: var(--button-text-color);
+  border-radius: 8px;
+  font-size: var(--button-font-size);
+  flex: 1;
+  margin: 0px 16px;
+  border: solid 2px #000;
+  color: #000;
+}
+
+#add-task-button {
+  padding: 6px 16px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 8px;
+  font-size: var(--button-font-size);
+  width: fit-content;
+}
+
+
+.form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+@keyframes formIn {
+  0% {
+    top: -50%;
+  }
+  100% {
+    top:50%;
+  }
+}
+.task-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 500px;
+  height: 300px;
+  background-color: #fff;
+  animation: ease-out formIn 0.5s;
+  z-index: 2;
+}
+
+#task-list {
+  margin-top: 16px;
+}
+
+.task-item {
+  border: solid 2px #000;
+  padding: 6px;
+  border-radius: 8px;
+  margin-bottom: 6px;
+}

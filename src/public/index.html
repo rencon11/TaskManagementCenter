@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メイン画面 | TMC</title>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    Task Management Center
+  </header>
+  <main>
+    <div id="main-container">
+      <div id="controls">
+        <select id="filter">
+          <option value="all">すべて</option>
+          <option value="active">未完了</option>
+          <option value="completed">完了済み</option>
+        </select>
+        <input type="text" id="search" placeholder="タスク検索" />
+        <button id="add-task-button">タスク追加</button>
+      </div>
+      <div id="task-list"></div>
+    </div>
+    <script src="script.js"></script>
+  </main>
+  <footer></footer>
+</body>
+
+</html>
